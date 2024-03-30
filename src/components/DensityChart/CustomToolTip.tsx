@@ -28,6 +28,7 @@ export function CustomToolTip({ chartProps, poolData, currentPrice }: CustomTool
   const price1 = chartProps?.payload?.[0]?.payload.price1
   const tvlToken0 = chartProps?.payload?.[0]?.payload.tvlToken0
   const tvlToken1 = chartProps?.payload?.[0]?.payload.tvlToken1
+  const activeLiquidity = chartProps?.payload?.[0]?.payload.activeLiquidity
 
   return (
     <TooltipWrapper>
@@ -70,6 +71,10 @@ export function CustomToolTip({ chartProps, poolData, currentPrice }: CustomTool
             </TYPE.label>
           </RowBetween>
         )}
+        <RowBetween>
+          <TYPE.label>Active Liquidity: </TYPE.label>
+          <TYPE.label>{formatAmount(activeLiquidity)}</TYPE.label>
+        </RowBetween>
       </AutoColumn>
     </TooltipWrapper>
   )
